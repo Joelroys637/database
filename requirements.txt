@@ -1,6 +1,5 @@
 streamlit
 streamlit_option_menu
-sqlite3
 base64
 PIL
 pandas
