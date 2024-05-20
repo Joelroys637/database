@@ -94,9 +94,10 @@ elif selected =="login":
     
     text_input = st.empty()
     text_input_container = st.empty()
+    check=st.empty()
     username = text_input.text_input('Username')
     password = text_input_container.text_input('Password', type='password')
-    ck1=st.checkbox("login",)
+    ck1=check.checkbox("login",)
     if ck1==True:
     
         if login(username, password):
@@ -104,6 +105,9 @@ elif selected =="login":
                text_input.empty()
                if password !=" ":
                    text_input_container.empty()
+                   if check!=" ":
+                       check.empty()
+                
            open_path()
         else:
             st.error('Incorrect username or password')
