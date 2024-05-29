@@ -4,6 +4,16 @@ import sqlite3
 import dataentry as data
 import base64
 import admin as adm
+import header_menu_remove as hedremove
+import smtplib
+
+
+
+#remove the header bar in streamlit
+hedremove.headerhide()
+
+
+
 
 original_title = '<h1 style="font-family: serif; color:white; font-size: 20px;"> </h1>'
 st.markdown(original_title, unsafe_allow_html=True)
@@ -46,12 +56,11 @@ c = conn.cursor()
 # Create a table for storing user credentials if it doesn't exist
 c.execute('''CREATE TABLE IF NOT EXISTS users (username TEXT, password TEXT,phone TEXT)''')
 conn.commit()
-#data open function
+#data open function in dataentryform
 def open_path():
     
     data.main()
     
-
 #option code
 
     
@@ -68,12 +77,38 @@ if selected =="sigup":
         user=st.text_input('username')
         password1=st.text_input('password')
         phone=st.text_input('Mobile number OR Email id')
+        #sending gmail messge
+        email_sender = "pythonleo637@gmail.com"
+        email_receiver = phone
+        subject = "SUCCESSFULLY SIGUP IN WEBPAGE "
+        body = f"hi {user} you have successfully sigup in webpage Thank you for comming stay more information about webpage"
+
+        try:
+            
+            text=f"subject:{subject}\n\n{body}"
+
+            server=smtplib.SMTP("smtp.gmail.com",587)
+ 
+            server.starttls()
+
+            server.login(email_sender,"dttp oczk lhik geoy")
+
+            server.sendmail(email_sender,email_receiver,text)
+
+            st.write("pleas check mail"+email_receiver)
+        except:
+            st.write("NOTICE** Kindly Enter a Email Id")
+
+        
+        if not user:
+            
+            st.stop()
         if st.button("SIGUP"):
             
             c.execute("INSERT INTO users VALUES (?, ?, ?)", (user,password1,phone))
             st.success("Sigup Successfully Thank you!")
         
-            
+            st.balloons()
             conn.commit()
         
     
@@ -81,7 +116,6 @@ if selected =="sigup":
     
         
 elif selected =="login":
-   
     def login(username, password):
         
         # Query the database to check if the username and password combination exists
@@ -107,13 +141,12 @@ elif selected =="login":
                    text_input_container.empty()
                    if check!=" ":
                        check.empty()
-                
            open_path()
         else:
             st.error('Incorrect username or password')
     
 elif selected =="Admin":
-    name=st.text_input("Enter you name")
+    name=st.text_input("Enter admin name ")
     if st.button("LOGIN ADMIN PAGE"):
         if name=="leojoelroys":
             
