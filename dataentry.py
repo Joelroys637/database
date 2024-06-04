@@ -2,7 +2,6 @@ import streamlit as st
 import image_database as img
 import sqlite3
 import datetime
-from PIL import Image
 import io
 
 def main():
