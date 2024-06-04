@@ -1,5 +1,7 @@
 import streamlit as st
+import image_database as img
 import sqlite3
+import datetime
 from PIL import Image
 import io
 
@@ -12,7 +14,7 @@ def main():
     background_image = """
     <style>
     [data-testid="stAppViewContainer"] > .main {
-    background-image: url("https://img.freepik.com/premium-photo/blue-modern-abstract-futuristic-technology-background-24_769134-546.jpg");
+    background-image: url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlJTIwbGlicmFyeXxlbnwwfHwwfHx8MA%3D%3D");
     background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
     background-position: center;  
     background-repeat: no-repeat;
@@ -60,7 +62,7 @@ def main():
         community=comm.text_input('Community')
         cast=cas.text_input('Cast')
         religion=rel.text_input('Religion')
-        date_of_birth=date.date_input('Date Of Birth')
+        date_of_birth=date.date_input('Date Of Birth',value=datetime.date(2000,1,11))
         blood_group=blood.text_input('Blood Group')
         aadhaar=aadh.text_input('Aadhaar')
         state=sta.text_input('State')
