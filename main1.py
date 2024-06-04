@@ -6,7 +6,7 @@ import base64
 import admin as adm
 import header_menu_remove as hedremove
 import smtplib
-
+import home 
 
 
 #remove the header bar in streamlit
@@ -14,16 +14,17 @@ hedremove.headerhide()
 
 
 
-
+    
 original_title = '<h1 style="font-family: serif; color:white; font-size: 20px;"> </h1>'
 st.markdown(original_title, unsafe_allow_html=True)
+
 
 
 # Set the background image
 background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
-    background-image: url("https://img.freepik.com/free-vector/geometric-gradient-futuristic-background_23-2149116406.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1715472000&semt=ais_user");
+    background-image: url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg");
     background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
     background-position: center;  
     background-repeat: no-repeat;
@@ -62,16 +63,17 @@ def open_path():
     data.main()
     
 #option code
-
     
 selected = option_menu(
     menu_title="",
-    options=["sigup","login","Admin"],
+    options=["HOME","sigup","login","Admin"],
     icons=["house","upload","upload"],
     orientation="horizontal",
 )
+if selected=="HOME":
+    home.main()
     
-if selected =="sigup":
+elif selected =="sigup":
     
     def create_user_table():
         user=st.text_input('username')
@@ -80,8 +82,12 @@ if selected =="sigup":
         #sending gmail messge
         email_sender = "pythonleo637@gmail.com"
         email_receiver = phone
-        subject = "SUCCESSFULLY SIGUP IN WEBPAGE "
-        body = f"hi {user} you have successfully sigup in webpage Thank you for comming stay more information about webpage"
+        subject = "Congratulations To SIGUP Dalmia School website "
+        body = f'''hi {user} you have successfully sigup in school webpage
+                   Thank you for comming to visite dalmia school
+                         YOU'S Detail:
+                                 ID:{user}
+                                 PASSWORD:{password1}'''
 
         try:
             
@@ -98,7 +104,6 @@ if selected =="sigup":
             st.write("pleas check mail"+email_receiver)
         except:
             st.write("NOTICE** Kindly Enter a Email Id")
-
         
         if not user:
             
