@@ -82,12 +82,13 @@ elif selected =="sigup":
         #sending gmail messge
         email_sender = "pythonleo637@gmail.com"
         email_receiver = phone
-        subject = "Congratulations To SIGUP Dalmia School website "
+        subject = "Congratulations To SIGUP government School website "
         body = f'''hi {user} you have successfully sigup in school webpage
-                   Thank you for comming to visite dalmia school
-                         YOU'S Detail:
+                   Thank you for comming to visite government school
+                         YOUR'S Detail:
                                  ID:{user}
-                                 PASSWORD:{password1}'''
+                                 PASSWORD:{password1}
+                                 THANK YOU!'''
 
         try:
             
