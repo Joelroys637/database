@@ -11,7 +11,7 @@ def main():
     background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
-    background-image: url("https://directory.edugorilla.com/wp-content/uploads/sites/6/2018/03/318a8eaacbd67f8a5474ff7861a463f2.jpeg");
+    background-image: url("https://img.freepik.com/free-vector/blackboard-school-banner_1308-24840.jpg");
     background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
     background-position: center;  
     background-repeat: no-repeat;
@@ -46,9 +46,9 @@ div[data-baseweb="base-input"] {
 
 
 
-    st.title("Dalmia higher secondary school")
+    st.title("Government higher secondary school")
     st.header("Details:")
-    st.header("DALMIA HR.SEC.SCHOOL, DALMIAPURAM was established in 1950 and it is managed by the Pvt. Aided.")
+    st.header("Government HR.SEC.SCHOOL, Government was established in 1950 and it is managed by the state government.")
     st.image("images.jpg",width=700)
 
 
@@ -61,6 +61,6 @@ div[data-baseweb="base-input"] {
     c1,c2=st.columns(2,gap="small")
     
     c1.image("location.png")
-    c2.header("DALMIA SCHOOL DALMIAPURAM,Trichy-621 651,Tamilnadu")
+    c2.header("Government school Government,Trichy-621 651,Tamilnadu")
     st.header("Contact: +123456789")
-    st.header("mail: dalmiaschool@gmail.com")
+    st.header("mail: Governmentschool@gmail.com")
