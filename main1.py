@@ -4,13 +4,14 @@ import sqlite3
 import dataentry as data
 import base64
 import admin as adm
-import header_menu_remove as hedremove
+#import header_menu_remove as hedremove
 import smtplib
-import home 
+import home
+import result as res
 
 
 #remove the header bar in streamlit
-hedremove.headerhide()
+#hedremove.headerhide()
 
 
 
@@ -66,7 +67,7 @@ def open_path():
     
 selected = option_menu(
     menu_title="",
-    options=["HOME","sigup","login","Admin"],
+    options=["HOME","sigup","login","Admin","result"],
     icons=["house","upload","upload"],
     orientation="horizontal",
 )
@@ -82,13 +83,13 @@ elif selected =="sigup":
         #sending gmail messge
         email_sender = "pythonleo637@gmail.com"
         email_receiver = phone
-        subject = "Congratulations To SIGUP government School website "
+        subject = "Congratulations To SIGUP Government School website "
         body = f'''hi {user} you have successfully sigup in school webpage
-                   Thank you for comming to visite government school
+                   Thank you for comming to visite Government school
                          YOUR'S Detail:
                                  ID:{user}
                                  PASSWORD:{password1}
-                                 THANK YOU!'''
+                                          THANK  YOU!'''
 
         try:
             
@@ -152,13 +153,24 @@ elif selected =="login":
             st.error('Incorrect username or password')
     
 elif selected =="Admin":
-    name=st.text_input("Enter admin name ")
-    if st.button("LOGIN ADMIN PAGE"):
+    nam=st.empty()
+    pas=st.empty()
+    name=nam.text_input("Enter admin name ")
+    password=pas.text_input("Enter password")
+    check=st.empty()
+    if check.checkbox("LOGIN ADMIN PAGE"):
         if name=="leojoelroys":
+            if password=="8838343971":
+                adm.back()
+                adm.main()
+                nam.empty()
+                pas.empty()
+                check.empty()
+            else:
+                
             
-            adm.back()
-            adm.main()
-        else:
-            
-            st.error('Not acccess this page because only admin can access this page')
+                st.error('Not acccess this page because only admin can access this page')
+
+elif selected=="result":
+    res.view_selected_students()
     
