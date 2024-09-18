@@ -79,19 +79,20 @@ def main():
         # Your existing code for text inputs...
 
         if ck1:
-        
-            
-            if image is not None:
+            if not(name1 and age1 and gender and community and cast and religion and date_of_birth and blood_group and aadhaar and state and address and Email):
+                st.error("pls enter a all field")
+            else:
+                if image is not None:
                 # Convert image to bytes
-                img_bytes = image.read()
+                    img_bytes = image.read()
 
                 # Insert data into SQLite database
-                c.execute("INSERT INTO dataform (Name, Age, Gender, Community, Cast, Religion, Date_Of_Birth, Blood_Group, Aadhaar_no, State,Email, Address, Image) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (name1, age1, gender, community, cast, religion, date_of_birth, blood_group, aadhaar, state,Email, address, img_bytes))
-            else:
+                    c.execute("INSERT INTO dataform (Name, Age, Gender, Community, Cast, Religion, Date_Of_Birth, Blood_Group, Aadhaar_no, State,Email, Address, Image) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (name1, age1, gender, community, cast, religion, date_of_birth, blood_group, aadhaar, state,Email, address, img_bytes))
+                else:
                 # Insert data without image
-                c.execute("INSERT INTO dataform (Name, Age, Gender, Community, Cast, Religion, Date_Of_Birth, Blood_Group, Aadhaar_no, State,Email, Address) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (name1, age1, gender, community, cast, religion, date_of_birth, blood_group, aadhaar, state,Email, address))
+                    c.execute("INSERT INTO dataform (Name, Age, Gender, Community, Cast, Religion, Date_Of_Birth, Blood_Group, Aadhaar_no, State,Email, Address) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (name1, age1, gender, community, cast, religion, date_of_birth, blood_group, aadhaar, state,Email, address))
 
-            conn.commit()
-            st.success("Thank you")
+                conn.commit()
+                st.success("Thank you")
 
     create_dataform_table()
