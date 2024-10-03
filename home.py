@@ -12,7 +12,7 @@ def main():
     background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
-    background-image: url("https://img.freepik.com/premium-photo/clean-interior-with-blank-wall_670147-27794.jpg");
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-fashion-atmosphere-modern-minimalist-corporate-culture-poster-image_162592.jpg");
     background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
     background-position: center;  
     background-repeat: no-repeat;
