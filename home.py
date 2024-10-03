@@ -1,7 +1,6 @@
 import streamlit as st
 
 def main():
-    
     original_title = '<h1 style="font-family: serif; color:white; font-size: 20px;"> </h1>'
     st.markdown(original_title, unsafe_allow_html=True)
     text='<h1 id="government-higher-secondary-school" style=" background-color: black;border-radius: 50px;text-align: center;">Government higher secondary school</h1> <h2 id="details" style="color: deeppink;">Details:</h2>'
@@ -12,7 +11,7 @@ def main():
     background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
-    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-fashion-atmosphere-modern-minimalist-corporate-culture-poster-image_162592.jpg");
+    background-image: url("https://img.freepik.com/premium-photo/clean-interior-with-blank-wall_670147-27794.jpg");
     background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
     background-position: center;  
     background-repeat: no-repeat;
