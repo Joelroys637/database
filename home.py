@@ -1,6 +1,7 @@
 import streamlit as st
 
 def main():
+    
     original_title = '<h1 style="font-family: serif; color:white; font-size: 20px;"> </h1>'
     st.markdown(original_title, unsafe_allow_html=True)
     text='<h1 id="government-higher-secondary-school" style=" background-color: black;border-radius: 50px;text-align: center;">Government higher secondary school</h1> <h2 id="details" style="color: deeppink;">Details:</h2>'
