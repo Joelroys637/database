@@ -59,7 +59,7 @@ div[data-baseweb="base-input"] {
 
     
 
-    st.markdown('<h2 id="it-is-located-in-urban-area-it-is-located-in-pullambadi-block-of-tiruchirappalli-district-of-tamil-nadu" style="color: black;text-shadow: azure;text-align: center;">It is located in Urban area.<br> It is located in PULLAMBADI block of TIRUCHIRAPPALLI district of Tamil Nadu.</h2>',unsafe_allow_html=True)
+    st.markdown('<h2 id="it-is-located-in-urban-area-it-is-located-in-pullambadi-block-of-tiruchirappalli-district-of-tamil-nadu" style="color:blue;text-shadow: azure;text-align: center;">It is located in Urban area.<br> It is located in PULLAMBADI block of TIRUCHIRAPPALLI district of Tamil Nadu.</h2>',unsafe_allow_html=True)
     
 
 
