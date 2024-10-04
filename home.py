@@ -83,6 +83,9 @@ body {
     font-family: Arial, sans-serif;
     background-color:red;
 }
+body{
+bgcolor="pink";
+}
 body {
     
     line-height: 1.6;
