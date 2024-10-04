@@ -11,7 +11,7 @@ import result as res
 
 
 #remove the header bar in streamlit
-hedremove.headerhide()
+#hedremove.headerhide()
 
 #checkbox into button view
 st.markdown("""
