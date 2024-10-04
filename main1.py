@@ -54,11 +54,13 @@ st.markdown(original_title, unsafe_allow_html=True)
 # Set the background image
 background_image = """
 <style>
-[data-testid="stAppViewContainer"] > .main {
+body {
     background-image: url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg");
-    background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
-    background-position: center;  
+    background-size: cover;  /* Cover the entire body */
+    background-position: center;
     background-repeat: no-repeat;
+    height: 100vh;  /* Ensure full height */
+    margin: 0;  /* Remove default margin */
 }
 </style>
 """
