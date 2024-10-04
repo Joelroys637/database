@@ -11,7 +11,7 @@ def main():
     background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
-    background-image: url("img1.jpg");
+    background-image: url("https://static.wixstatic.com/media/f11b79_730a3ff481d34709819ffc264d708a6e~mv2.jpg/v1/fill/w_980,h_645,al_c,q_85,usm_0.66_1.00_0.01,en");
     background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
     background-position: center;  
     background-repeat: no-repeat;
